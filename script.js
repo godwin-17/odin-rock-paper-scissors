@@ -36,11 +36,9 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === "scissors" && computerSelection === "scissors") {
     return "It's a draw";
   }
-
 }
 
 function game() {
-  
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt("Rock, Paper or Scissors");
 
@@ -50,6 +48,9 @@ function game() {
     console.log(playRound(playerSelection.toLowerCase(), computerSelection));
   }
 
+}
+
+function getWinner() {
   if (playerCounter > ComputerCounter) {
     alert("You are the winner of the game!");
   } else if (playerCounter < ComputerCounter) {
@@ -60,3 +61,4 @@ function game() {
 }
 
 game();
+getWinner();
