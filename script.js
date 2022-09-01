@@ -1,3 +1,6 @@
+
+
+/*
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
 
@@ -62,3 +65,4 @@ function getWinner() {
 
 game();
 getWinner();
+*/
