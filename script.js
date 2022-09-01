@@ -2,7 +2,7 @@ const buttons = document.querySelectorAll("button");
 
 const body = document.querySelector("body");
 const div = document.createElement("div");
-
+const score = document.createElement("div");
 
 buttons.forEach(button => {
   button.addEventListener("click", () => {
@@ -19,7 +19,16 @@ buttons.forEach(button => {
     console.log(playRound(playerSelection.toLowerCase(), computerSelection));
 
     div.textContent = result;
+    score.textContent = `PLAYER ${playerCounter} - COMPUTER ${ComputerCounter}`;
+    div.appendChild(score);
     body.appendChild(div);
+
+    if (playerCounter === 5) {
+      div.append("The Player is the winner");
+    } else if (ComputerCounter === 5) {
+      div.append("The Computer is the winner");
+    }
+
   });
 });
 
@@ -74,26 +83,3 @@ function playRound(playerSelection, computerSelection) {
     return result;
   }
 }
-
-
-/*
-function game() {
-  for (let i = 0; i < 5; i++) {
-
-    alert(playRound(playerSelection.toLowerCase(), computerSelection));
-    console.log(playRound(playerSelection.toLowerCase(), computerSelection));
-    
-  }
-
-}
-
-function getWinner() {
-  if (playerCounter > ComputerCounter) {
-    alert("You are the winner of the game!");
-  } else if (playerCounter < ComputerCounter) {
-    alert("The Computer is the winner of the game!");
-  } else {
-    alert("No winner. It's a draw!");
-  }
-}
-*/
