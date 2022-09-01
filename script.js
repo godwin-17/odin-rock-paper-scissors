@@ -1,12 +1,24 @@
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+
+    let playerSelection = button.textContent;
+    console.log("PLAYER SELECTION: ",playerSelection.toLowerCase());
+
+    let computerSelection = getComputerChoice();
+    console.log("COMPUTER SELECTION: ",computerSelection);
+  });
+});
 
 
-/*
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
 
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
+/*
 let playerCounter = 0;
 let ComputerCounter = 0;
 
@@ -41,6 +53,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+
 function game() {
   for (let i = 0; i < 5; i++) {
     let playerSelection = prompt("Rock, Paper or Scissors");
@@ -49,6 +62,7 @@ function game() {
 
     alert(playRound(playerSelection.toLowerCase(), computerSelection));
     console.log(playRound(playerSelection.toLowerCase(), computerSelection));
+    
   }
 
 }
@@ -62,7 +76,4 @@ function getWinner() {
     alert("No winner. It's a draw!");
   }
 }
-
-game();
-getWinner();
 */
