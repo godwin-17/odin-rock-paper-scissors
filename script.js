@@ -19,19 +19,16 @@ buttons.forEach(button => {
     console.log(playRound(playerSelection.toLowerCase(), computerSelection));
 
     div.textContent = result;
-    score.textContent = `PLAYER ${playerCounter} - COMPUTER ${ComputerCounter}`;
+    score.textContent = `PLAYER ${playerCounter} - COMPUTER ${computerCounter}`;
     div.appendChild(score);
     body.appendChild(div);
 
-    if (playerCounter === 5) {
-      div.append("The Player is the winner");
-    } else if (ComputerCounter === 5) {
-      div.append("The Computer is the winner");
+    if (playerCounter === 5 || computerCounter === 5) {
+      getWinner();
     }
 
   });
 });
-
 
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -41,13 +38,13 @@ function getComputerChoice() {
 
 
 let playerCounter = 0;
-let ComputerCounter = 0;
+let computerCounter = 0;
 let result = "";
 
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === "paper") {
-    ComputerCounter++;
+    computerCounter++;
     result = "You Lose! Paper beats Rock";
     return result;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -59,7 +56,7 @@ function playRound(playerSelection, computerSelection) {
     return result;
 
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    ComputerCounter++;
+    computerCounter++;
     result = "You Lose! Scissors beats Paper";
     return result;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
@@ -71,7 +68,7 @@ function playRound(playerSelection, computerSelection) {
     return result;
   
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    ComputerCounter++;
+    computerCounter++;
     result = "You Lose! Rock beats Scissors";
     return result;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
@@ -81,5 +78,13 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === "scissors" && computerSelection === "scissors") {
     result = "It's a draw";
     return result;
+  }
+}
+
+function getWinner() {
+  if (playerCounter === 5) {
+    div.append("The Player is the winner!");
+  } else if (computerCounter === 5) {
+    div.append("The Computer is the winner!");
   }
 }
