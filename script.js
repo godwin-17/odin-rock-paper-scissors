@@ -89,5 +89,5 @@ function getWinner() {
 function disableButtons() {
   buttons.forEach(button => {
     button.disabled = true;
-  })
+  });
 }
