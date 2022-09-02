@@ -7,16 +7,11 @@ const score = document.createElement("div");
 buttons.forEach(button => {
   button.addEventListener("click", () => {
 
-    // PLAYER
     let playerSelection = button.textContent;
-    console.log("PLAYER SELECTION: ",playerSelection.toLowerCase());
-
-    // COMPUTER
+  
     let computerSelection = getComputerChoice();
-    console.log("COMPUTER SELECTION: ",computerSelection);
-
-    // TO SEE WHO IS THE WINNER
-    console.log(playRound(playerSelection.toLowerCase(), computerSelection));
+    
+    playRound(playerSelection.toLowerCase(), computerSelection);
 
     div.textContent = result;
     score.textContent = `PLAYER ${playerCounter} - COMPUTER ${computerCounter}`;
