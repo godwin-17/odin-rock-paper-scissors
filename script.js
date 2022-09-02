@@ -84,7 +84,15 @@ function playRound(playerSelection, computerSelection) {
 function getWinner() {
   if (playerCounter === 5) {
     div.append("The Player is the winner!");
+    disableButtons();
   } else if (computerCounter === 5) {
     div.append("The Computer is the winner!");
+    disableButtons();
   }
+}
+
+function disableButtons() {
+  buttons.forEach(button => {
+    button.disabled = true;
+  })
 }
